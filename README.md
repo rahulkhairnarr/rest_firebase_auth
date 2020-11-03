@@ -27,10 +27,12 @@ INSTALLED_APPS = [
 ]
 ```
 
-In your project's `settings.py`, add this to the `REST_FRAMEWORK` configuration. Note that if you want to retain access to the browsable API for locally created users, then you will probably want to keep `rest_framework.authentication.SessionAuthentication` too.
+In your project's `settings.py`, add this to the `REST_FRAMEWORK` and `AUTH_USER_MODEL` configuration. Note that if you want to retain access to the browsable API for locally created users, then you will probably want to keep `rest_framework.authentication.SessionAuthentication` too.
 
 
 ```
+AUTH_USER_MODEL = 'django_rest_firebase_auth.Account'
+
 REST_FRAMEWORK = {
   ...
   'DEFAULT_AUTHENTICATION_CLASSES': [
